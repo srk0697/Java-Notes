@@ -6,20 +6,20 @@ Also, string concatenation, which is the combining of two or more strings to cre
 
 ### Example:-
 
-class Main {
+    class Main {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
   
-   String firstName = "John";
+    String firstName = "John";
    
-   String lastName = "Lennon";
+    String lastName = "Lennon";
    
-   String fullName = firstName+" "+lastName;
+    String fullName = firstName+" "+lastName;
    
-   System.out.println("My name is "+fullName);
+    System.out.println("My name is "+fullName);
    
+      }
     }
-}
 #### Output:
 My name is John Lennon.
 ___
@@ -74,20 +74,90 @@ There is another way to declare and initialize an array in the same line.
 ***
 ### Example 2:-
 
-class Main {
+    class Main {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
   
     String students[];
     
     String names[] = {"Adam","Lucy","Emma","John"}; System.out.println(names[3]);
     
+       }
     }
-}
 
 ### Output:
 
 John
+
+### Example 3:-
+
+Write a Java program to take the marks of students from roll numbers 0 to 4 and store them in an array. After storing the marks, print the marks of the student with roll number 4.
+
+***Sample Input:***
+10
+11
+12
+13
+14
+***Sample Output:***
+14
+
+#### Answer
+
+     import java.util.*;
+     public class Source {
+     public static void main(String[] args) {
+
+      int marks[];
+      marks= new int[5];
+      Scanner input= new Scanner(System.in);
+      marks[0]=input.nextInt();
+      marks[1]=input.nextInt();
+      marks[2]=input.nextInt();
+      marks[3]=input.nextInt();
+      marks[4]=input.nextInt();
+      System.out.println(marks[4]);
+      }
+    }
+
+### Example 4:-
+
+In addition to taking marks as input, write code to take as input a student’s roll number and display his/her marks.
+Here, roll numbers start from 0.
+The first 5 lines will contain marks of students and the sixth line will contain roll number of the student whose marks are to be displayed.
+Note: The following statement will print the marks of a student whose roll number is stored in the variable rollNumber :
+System.out.println(marks[rollNumber]);
+***Sample Input:***
+11
+12
+13
+14
+15
+3
+
+***Sample Output:***
+The student with roll number 3 has scored 14 marks
+
+#### Answer
+
+    import java.util.*;
+    public class Source {  
+    public static void main(String[] args) {
+
+      int marks[];
+      marks= new int[5];
+      Scanner input= new Scanner(System.in);
+      marks[0]=input.nextInt();
+      marks[1]=input.nextInt();
+      marks[2]=input.nextInt();
+      marks[3]=input.nextInt();
+      marks[4]=input.nextInt();
+      
+      int rollNumber;
+      rollNumber=input.nextInt();
+      System.out.println("The student with roll number "+rollNumber+" has scored "+marks[rollNumber]+" marks");
+      }
+    }
 ___
 # Relational and Logical Operators
 The boolean data type is very useful when we have to compare two quantities.
@@ -96,4 +166,87 @@ The boolean data type is very useful when we have to compare two quantities.
 
 **The Logical Operators** “AND” , “OR” and "NOT". Logical Operators takes boolean data type as input and gives an output of boolean data type. The “AND” operation results in a true value only if both of the conditions involved are true. Whereas, the “OR” operation results in a true value even if one of the conditions involved is true.
 
-![Markdown logo](Screenshot 2021-08-12 035747.png "Markdown")
+![Screenshot 2021-08-12 035747](https://user-images.githubusercontent.com/88551711/129225482-7bedf7a9-206f-458b-a610-944604397bc9.png)
+
+![Screenshot 2021-08-12 035829](https://user-images.githubusercontent.com/88551711/129228305-0a5e49c9-95e0-4e49-892a-9cec0c2a8d0a.png)
+
+![Screenshot 2021-08-12 042750](https://user-images.githubusercontent.com/88551711/129228343-512e67fc-71bc-4c85-afea-a9ce7a4b51c7.png)
+
+___
+
+# Precendence Order of Logical Operators
+
+Just like arithmetic operations follow the BODMAS rule, similarly, there is a predefined precedence order in which a statement with logical operators is evaluated.
+
+### Example 1:-
+
+Consider that there are four buttons operating the same bulb, namely switch A, B, C and D.
+
+The bulb will be on only if at least one of the following conditions is true:
+
+(i) A, B, C and D all are switched on.
+
+(ii) A and B are switched on or D and C are switched on.
+
+Consider that A, B, C and D all are boolean variables. The 'on' state of the switch represents ‘true’ and the off state represents ‘false’. Write the statement using logical operators to represent the state of the bulb.
+
+(i.e. the statement will evaluate to true if the bulb is switched on)
+
+#### Answer
+
+Consider all situations when the bulb is switched on:
+
+(i) Since all the boolean variables have to be true, we will use the “&&” operator here as follows to represent this situation: A && B && C && D
+
+(ii) When A and B are switched on “(A && B)” will evaluate to true. Whereas when D and C are on “(D && C)” will evaluate to true. Since only one of these has to be true, this situation will be represented as follows: (A && B) || (D && C)
+
+For the bulb to be switched on, only one of these conditions has to be true.
+
+Hence, the required logical statement is:
+
+(A && B && C && D) || ((A && B) || (D && C))
+
+### Example 2:-
+
+Assume that you have built a lie detector which detects the level of chemicals X and Y.
+
+If the sum of the amounts of X and Y is greater than 30, then the person is telling the truth.
+
+Write Java code to take in the values of X and Y and detect whether the person is telling the truth or not. If the person is telling the truth, display "The statement said by the person is true". If the person is lying then display "The statement said by the person is false".
+
+***Sample input:***
+
+12
+
+23
+
+***Sample output:***
+
+The statement said by the person is true
+
+#### Answer
+
+    import java.util.*;
+    public class Source {
+    public static void main(String[] args) {
+
+      int X,Y;
+      Scanner input= new Scanner(System.in);
+      X=input.nextInt();
+      Y=input.nextInt();
+      boolean test;
+      test=(X+Y)>30;
+      System.out.println("The statement said by the person is "+test);
+      }
+    }
+
+___
+
+# Errors and Debugging
+
+A run-time error will only occur when the code is actually running. These errors are the most difficult as they lead to unexpected program crashes and bugs in your code, both of which can be hard to track down and fix.
+
+However, syntax errors are compile-time errors. Compile-time errors occur when codes are written in ways in which the Java compiler does not recognise. The compiler will display errors to alert you about something that will not compile and, therefore, cannot be run.
+
+___
+
