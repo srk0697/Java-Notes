@@ -250,3 +250,156 @@ However, syntax errors are compile-time errors. Compile-time errors occur when c
 
 ___
 
+# EXAMPLES:-
+
+### Question 1:-
+
+Write a code below that takes a 5-digit positive number from the user as an input.
+For example, you can take 34768 as an input. The program should print the numbers in the ones, tens, hundreds, thousands, and ten thousands places of the 5-digit number the user inputs.
+
+***Input:*** 
+34768
+
+***Output:***
+3
+4
+7
+6
+8
+
+#### Answer-
+
+    import java.util.Scanner;
+    class Source {
+
+     public static void main(String[] args) {
+
+
+        //Create new scanner
+        Scanner input = new Scanner(System.in);
+
+        //Values of each digit
+        int tenThousands, thousands, hundreds, tens, ones;
+
+        //Prompt user to input 5 digit number
+        
+        int number = input.nextInt();
+        if (number > 99999) {
+            System.out.println("Error! Number more than 5 digits.");
+        }
+        else if (number < 10000) {
+            System.out.println("Error! Number less than 5 digits.");
+        }
+        else if (10000<=number&&number<=99999){
+
+            //Displays ten thousands place digit
+            tenThousands = number / 10000;
+            System.out.println(tenThousands);
+
+            //Displays thousands digit
+            thousands = (number % 10000) / 1000;
+            System.out.println(thousands);
+
+            //Displays hundreds place digit
+            hundreds = number % 1000 / 100;
+            System.out.println(hundreds);
+
+            //Displays tens digit
+            tens = (number % 100) / 10;
+            System.out.println(tens);
+
+            //Displays ones digit
+            ones = number % 10;
+            System.out.println(ones);
+
+
+            //Error if number is less or more than five digits
+        }
+
+      }
+    }
+***    
+### Question 2:-
+
+Let’s say you have two variables, a and b:
+
+a is an int variable initialised to 6 and
+b is a double variable initialised to 5.5 
+
+Now you want to add these two variables and print their sum, but you’re not interested in the decimal part of a + b.
+
+Write a code that computes a + b and prints out only the whole number part of the result.
+
+***Input:***
+No input required
+
+***Output:***
+11
+
+#### Answer-
+
+    class Source {
+    public static void main(String[] args) {
+       int a = 6;
+       double b = 5.5;
+       int sum = a + (int)b;
+       System.out.println(sum);
+      }
+     }
+***
+### Question 3:-
+
+Write a program that does the following:
+
+1.It creates a String array called "names", and the array is initialised with a size of four. In other words, create a String array called "names" that can store four entries.
+2.It stores the first names ‘Henry’ and ‘Shane’ in the first two entries.
+3.It stores the last names ‘Sharma’ and ‘Watson’ in the next two entries.
+4.It prints out, on separate lines, the first name + last name of the two names stored in the names array, e.g.
+
+#### Answer-
+
+    class Source {
+    public static void main(String[] args) {
+    String employeeNames[] = {"Henry", "Shane", "Sharma", "Watson"};
+
+    System.out.println(employeeNames[0] + " " + employeeNames[2]);
+    System.out.println(employeeNames[1] + " " + employeeNames[3]);
+     }
+    }
+***
+### Question 4:-
+
+Let’s say someone is booking an air ticket for himself and his brother. There is an offer that says that he will get a 20% discount if both he and his brother are less than 25 years old.
+Write a code that prints ‘True’ if he is eligible for the offer and ‘False’ if he is not eligible.
+
+Specifically, the program should —
+
+(i) Ask the user to enter his age
+(ii) Ask the user to enter the age of his brother
+(iii) Store the ages of the user and the user’s brother
+(iv) Print "true" if the user is eligible for the discount or "false" if the user is not eligible for the discount  
+(v) Please note that age has to be non- negative. 
+(vi) So, in case the user enters the age which is less than or equal to 0, the program should return false.
+
+Input:
+25,28
+
+Output:
+false
+
+Hint: Do you remember the Scanner class we talked about, which helped you take inputs from the user? If you do, then use a boolean variable that stores this condition and returns true or false.
+
+#### Answer-
+
+    import java.util.Scanner;
+    class Source {
+    public static void main(String[] args) {
+       int myAge;
+       int ageOfBrother;
+       Scanner input = new Scanner(System.in);
+       myAge = input.nextInt();
+       ageOfBrother = input.nextInt();
+       boolean discount = (myAge < 25 && ageOfBrother < 25 && myAge > 0 && ageOfBrother>0);
+       System.out.println(discount);
+      }
+    }
