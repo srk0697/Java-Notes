@@ -253,4 +253,437 @@ The person is lying
 
 ___
 
-#
+# Nested If Else
+
+Nested If Else basically means an If Else statement inside another If Else statement. You often have to check sub-conditions within existing conditions. For example, let’s say you’re going to a movie. First, you’ll check if the tickets are available at a theatre near your home. Then, you will check another condition, i.e. whether the price of the ticket is worth it. However, if the tickets aren’t available, you will not check this sub-condition.
+
+**The syntax for nested if-else:**
+
+     if (condition1) {
+	if (condition1A) {
+		Action1A;
+	}
+	else {
+		Action1B;
+	}
+     }
+     else {
+	Action2;
+     }
+	
+___
+
+# Switch Case
+
+**The syntax for switch block-**
+
+     switch (variable) {
+       case match1:
+		Action1;
+		break;
+	
+       case match2:
+		Action2;
+		break;
+	.
+	.
+	.
+       case matchN:
+		ActionN;
+		break;
+	
+       default:
+		DefaultAction;
+		break;
+       }
+
+switch-case statements help us to solve everyday life scenarios which require us to choose between different alternatives. If you don't use break statement at the end of each case block, all of the subsequent case blocks will start executing, till it executes a break statement or switch block end.
+They are very similar to multiple If-Else statements, but the only difference being that Switch case statements are strictly used only when we have to only check the value of a variable and only then take an action. It is recommended to use If-Else statements in those situations where you might have to check some additional conditions besides the value of a single variable.
+
+### Example 1:-
+
+Can you write Java code using the switch-case statements for the coffee vending machine example you saw earlier?
+A user can ask for the following drinks:
+
+Cappuccino, code:1
+
+Espresso,code:2
+
+Latte,code:3
+
+Milk,code:4
+
+You have to take the code of the drink as input from the user and print “Preparing <name of the drink>” as output.
+If the user has entered any number not within 1 to 4, then print “Drink not available”.
+
+***Sample Input:***
+
+1
+
+***Sample Output:***
+
+Preparing cappuccino
+
+#### Answer-
+
+	switch (code){
+           case 1:
+               System.out.println("Preparing cappuccino");
+               break;
+           case 2:
+               System.out.println("Preparing espresso");
+               break;
+           case 3:
+               System.out.println("Preparing latte");
+               break;
+           case 4:
+               System.out.println("Preparing milk");
+               break;
+           default:
+               System.out.println("Drink not available");
+               break;
+        }
+***
+### Example 2:-
+
+Write Java code using Switch case statements for the following problem:
+
+You have to create a sorting hat program. A student will be asked to enter a random number and based on that, he/she will be allotted a house. The allotment is as follows:
+1-Hufflepuff 
+2-Gryffindor
+3-Slytherin
+4-Ravenclaw
+Make the default statement as “Enter a number from 1 to 4”
+	
+***Sample input:***
+	
+1
+	
+***Sample output:***
+	
+Hufflepuff
+
+#### Answer-
+
+    import java.util.*;
+    public class Source {
+    public static void main(String[] args) {
+
+       int n;
+       Scanner input= new Scanner(System.in);
+       n=input.nextInt();
+       switch (n){
+           case 1:
+               System.out.println("Hufflepuff");
+               break;
+           case 2:
+               System.out.println("Gryffindor");
+               break;
+           case 3:
+               System.out.println("Slytherin");
+               break;
+           case 4:
+               System.out.println("Ravenclaw");
+               break;
+           default:
+               System.out.println("Enter a number from 1 to 4");
+        }
+       }
+      }
+***
+### Example 3:-
+
+Write a Java program to check eligibility to drink based on entered age.(Assume legal drinking age as 21).
+If the person is eligible, print “You are eligible to consume alcohol” 
+If the person is not eligible, print “You are not eligible to consume alcohol. Go home kid!”
+	
+***Sample Input:***
+
+21
+
+***Sample Output:***
+
+You are eligible to consume alcohol
+
+#### Answer-
+
+     import java.util.*;
+     public class Source {
+     public static void main(String[] args) {
+	
+        int age;
+        Scanner input= new Scanner(System.in);
+        age=input.nextInt();
+        
+        //write you code here
+        if (age>=21){
+            System.out.println("You are eligible to consume alcohol");
+        }
+        else {
+            System.out.println("You are not eligible to consume alcohol. Go home kid!");
+        }
+       }
+     }
+### Example 4:-
+
+Write a Java program to take the values of length and breadth from user and print whether the quadrilateral is a rectangle or a square.(You can assume that all angles in the quadrilateral are right angles).
+	i) Print out “Square” in case the quadrilateral is a square
+	ii) Print out “Rectangle” in case the quadrilateral is a rectangle
+
+***Sample Input:***
+
+4
+
+4
+***Sample Output:***
+
+Square
+
+#### Answer-
+
+    import java.util.*;
+    public class Source {
+    public static void main(String[] args) {
+	
+        int length,breadth;
+        Scanner input = new Scanner(System.in);
+        length=input.nextInt();
+        breadth=input.nextInt();
+        
+        //wrire your code here.
+        if (length==breadth){
+            System.out.println("Square");
+        }
+        else {
+            System.out.println("Rectangle");
+        }
+       }
+     }
+***
+### Example 5:-
+
+Assume that you have built a lie detector which detects the level of chemicals X and Y.
+If the sum of the amounts of X and Y is greater than 30, then the person is telling the truth.
+Write Java code to take in the values of X and Y and detect whether the person is telling the truth or not.
+If the person is not lying then display "The person is telling the truth.", otherwise display"The person is lying."
+
+***Sample input:***
+
+12
+
+23
+***Sample output:***
+
+The person is telling the truth.
+
+#### Answer-
+
+    import java.util.*;
+    public class Source {
+    public static void main(String[] args) {
+	
+        int X,Y,Sum;
+        Scanner input= new Scanner(System.in);
+        X=input.nextInt();
+        Y=input.nextInt();
+        //write your code here
+        Sum=(X+Y);
+        if (Sum > 30){
+            System.out.println("The person is telling the truth.");
+        }
+        else{
+            System.out.println("The person is lying.");
+        }
+      }
+    }
+***
+### Example 6:-
+
+**Day of the week**
+
+***Sample Input:***
+	
+January
+
+4
+
+***Output:***
+
+Ohhh! It's a workday :|
+
+#### Answer:-
+
+        import java.util.Scanner;
+        class Source {
+        public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+		// Enter month
+		String month = scan.next();
+		// Enter date
+		int date = scan.nextInt();
+		
+		int day = 0;
+		switch (month) {
+			case "January":
+				day = date;
+				break;
+			case "February":
+				day = 31 + date;
+				break;
+			case "March":
+				day = 31 + 28 + date;
+				break;
+			case "April":
+				day = 31 + 28 + 31 + date;
+				break;
+			case "May":
+				day = 31 + 28 + 31 + 30 + date;
+				break;
+			case "June":
+				day = 31 + 28 + 31 + 30 + 31 + date;
+				break;
+			case "July":
+				day = 31 + 28 + 31 + 30 + 31 + 30 + date;
+				break;
+			case "August":
+				day = 31 + 28 + 31 + 30 + 31 + 30 + 31 + date;
+				break;
+			case "September":
+				day = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + date;
+				break;
+			case "October":
+				day = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + date;
+				break;
+			case "November":
+				day = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + date;
+				break;
+			case "December":
+				day = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + date;
+				break;
+			default:
+				System.out.println("Invalid input");
+		}
+		int dayNumber = day % 7;
+		// since day 1 is Monday
+		if (dayNumber == 0 || dayNumber == 6) {
+			System.out.print("Hurray!");
+		} else {
+			System.out.print("Ohhh! It's a work day :|");
+		}
+		scan.close();
+            }
+         }
+***
+### Example 7:-
+
+Create a program for calculating the income tax to be paid by an individual earning less than 1 crore. Use conditional statements only.
+
+![Screenshot 2021-08-16 142849](https://user-images.githubusercontent.com/88551711/129538444-c8422b1f-5341-4b40-99fb-df582f9caade.png)
+
+**Additional information:**
+
+	i)The basic exemption limit for individuals (i.e. below 60 years of age) is Rs. 2.50 lakhs.
+
+	ii)The basic exemption limit for senior citizens (60 years to 80 years) is Rs. 3.00 lakhs.
+
+	iii)The basic exemption limit for very senior citizens (80 years and above) is Rs. 5.00 lakhs.
+
+	iv)No extra cess is to be levied.
+	
+**Take the income and age as inputs and return the income tax.** 
+
+For example, if the income of an individual is 6 lacs and his/her age is < 60, then the income tax to be paid is calculated by the following set of rules:
+
+![Screenshot 2021-08-16 155903](https://user-images.githubusercontent.com/88551711/129550163-fa07c351-5274-46b2-b70c-390a6ace0d52.png)
+
+***Sample Input:***
+
+600000
+
+45
+
+***Output:***
+
+45000.0
+									      
+#### Answer-
+
+    import java.util.Scanner;
+
+    class Source {
+    public static void main(String args[]) {
+        Scanner scan = new Scanner(System.in);
+        // Enter annual income
+        double income = scan.nextDouble();
+        // Enter age
+        int age = scan.nextInt();
+        
+        double minimumAllowedIncome; 
+        
+        if ((age > 60) && (age <= 80)) {
+            minimumAllowedIncome = 300000;
+        } else if (age > 80) {
+            minimumAllowedIncome = 500000;
+        } else {
+            minimumAllowedIncome = 250000;
+        }
+        double tax = 0.0;
+        if (income > minimumAllowedIncome && income <= 500000.00) {
+            tax = 0.1 * (income - minimumAllowedIncome);
+        } else if (income > 500000.00 && income <= 1000000.00) {
+            tax = 0.1 * (500000 - minimumAllowedIncome) + 0.2 * (income - 500000);
+        } else if (income > 1000000.00) {
+            tax = 0.1 * (500000 - minimumAllowedIncome) + 0.2 * (1000000 - 500000) + 0.3 * (income - 1000000);
+        }
+        System.out.print(tax);
+        scan.close();
+      }
+    }
+___
+
+# Additional Reading: The Ternary Operator
+
+The ternary operator(?:) is a conditional statement similar to the if-else statement. The format of using this operator is as follows:
+
+**variable x = (expression) ? value if true: value if false**
+
+***For example:***
+
+x=(a>b)?y:z;
+
+Here, if the condition (a>b) is true then:
+
+	**x will be assigned the value y.**
+
+If the given condition is not true, i.e. a<b, then:
+
+	**x will be assigned the value z.**
+
+Consider the following snippet of code. It checks whether the value of the variable flag is greater than 0 and assigns a value to the variable “alert” based on that.
+
+		if (flag>0){
+		   alert="ON";
+		}
+		else {
+		   alert="OFF";
+		}
+
+
+This code can be written in just one line by using the ternary operator as follows:
+
+	**alert=(flag>0)?"ON":"OFF";**
+
+Another example can be, finding maximum value between two values. With if-else we can do something like this-
+
+		int x, y;
+		int maxValue;
+		if (x > y) {
+		    maxValue = x;
+		}
+		else {
+		    maxValue = y;
+		}
+This code can be written in more compact form as shown below-
+
+		int x, y;
+		int maxValue = (x > y) ? x : y;
