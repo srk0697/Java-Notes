@@ -732,3 +732,123 @@ What will be the number of times the loop below will run?
 
 12, The loop will run till counter=11. But since the counter starts from zero, it will also run once when counter=0. Hence the loop will run for a total of 12 times.
 
+### Example 2:-
+
+Write a program that prints all the odd numbers from 25 to 1 (in decreasing order).
+
+***Input:***
+No input required
+
+***Output*** 
+25 23 21 19 17 15 13 11 9 7 5 3 1
+
+#### Answer-
+
+	class Source {
+		public static void main(String[] args) {
+		int num = 25; 
+			while( num >= 1) {
+		  System.out.print (num + " ");
+		  num = num - 2;
+		} 
+	    }
+	}
+***
+### Example 3:-
+
+Write a program to print numbers from 1 to n, where n is a number taken as input from the user.
+
+***Sample Input:***
+
+4
+
+***Sample Output:***
+
+1
+
+2
+
+3
+
+4
+
+#### Answer-
+
+	import java.util.*;
+	public class Source {
+
+	   public static void main(String[] args) {
+	     int n;
+	     Scanner input= new Scanner(System.in);
+	     n=input.nextInt();
+	     int counter=1;
+	     while (counter<=n){
+		 System.out.println(counter);
+		 counter=counter+1;
+	     }
+	   }
+	}
+***
+### Example 4:-
+
+Write a program to print n multiples of x, where n and x are integers entered by the user.
+The first line of input will contain x and the second line will have n.
+
+***Sample Input:***
+
+2
+
+4
+***Sample Output:***
+2
+
+4
+
+6
+
+8
+
+#### Answer-
+
+	import java.util.*;
+	public class Source {
+
+	   public static void main(String[] args) {
+	     int x,n;
+	     Scanner input= new Scanner(System.in);
+	     x=input.nextInt();
+	     n=input.nextInt();
+	     int counter =1;
+	     while (counter<=n){
+		 System.out.println(x*counter);
+		 counter=counter+1;
+	     }
+	   }
+	}
+***
+### Example 5:-
+
+Write a Java program to print all alphabets from a to z in lowercase.
+(Hint: The ASCII value of “a” is 97)
+Note: You have to print the alphabets in a single line.
+***Sample Input:***
+
+Nil
+
+***Sample Output:***
+
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+
+#### Answer-
+
+	import java.util.*;
+	public class Source {
+
+	   public static void main(String[] args) {
+	       int counter = 97;
+	       while (counter <= 122) {
+		   System.out.print((char) counter+ " ");
+		   counter = counter + 1;
+	       }
+	   }
+	}
