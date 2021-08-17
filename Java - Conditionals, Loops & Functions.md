@@ -690,3 +690,45 @@ This code can be written in more compact form as shown below-
 
 ___
 
+# Understanding loops-The While Loop
+
+Java has constructs called loops which can facilitate repeated execution of a certain set of statements until a certain user-defined condition is met.
+
+**The Syntax for while loop-**
+
+	while (condition) {
+	    Action;
+	}
+
+
+**The syntax for while loop using counter-**
+
+	int counter = initialValue;
+	while (counter < endValue) {
+	    Action;
+	    counter = counter + increment;
+	}
+
+**To summarise, here are the important components of any loop:**
+
+	i) A starting point.
+
+	ii) A loop control variable that’s also called the counter, which keeps track of how many iterations a loop has to run. The counter is incremented after each iteration.
+
+	iii) A loop continuation condition which defines how many times a loop has to run. The condition makes sure that the loop runs until an endpoint is reached.
+
+### Example 1:-
+
+What will be the number of times the loop below will run?
+
+	public static void main(String[] args) {
+	   int counter=0;
+	   while (counter<12){
+	       counter=counter+1;
+	   }
+	}
+
+#### Answer-
+
+12, The loop will run till counter=11. But since the counter starts from zero, it will also run once when counter=0. Hence the loop will run for a total of 12 times.
+
