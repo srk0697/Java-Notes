@@ -301,9 +301,9 @@ iii) How to print the value stored inside a variable -
 ![Screenshot 2021-08-18 122834](https://user-images.githubusercontent.com/88551711/129852727-36b7f393-40cb-4634-85c5-aaee5fd5f38e.png)
 ___
 # Introduction to Data Types - I
-A bit can only contain 0 or 1. We can say a bit can represent 2^1 pieces of information.
+A bit can only contain 0 or 1. We can say a bit can represent (2^1) pieces of information.
 
-If we take two bits, we can have four combinations, such as 00, 01, 10, 11. So two bits can represent 2^2  pieces of information. Similarly, n bits can store 2^n pieces of information. As int in java is 32 bits long, it can represent 2^32 different numbers. But we have to represent both positive and negative numbers by the same set of 2^32, so we have to divide this set equally between positive and negative numbers, which is 2^31. So there can be 2^31 negative numbers and 2^31 positive numbers. But, as we also have to represent zero, one piece of information from the positive half is reserved for that. So the range for storing integer data type is -2^31 to 2^31-1.
+If we take two bits, we can have four combinations, such as 00, 01, 10, 11. So two bits can represent (2^2)  pieces of information. Similarly, n bits can store (2^n) pieces of information. As int in java is 32 bits long, it can represent (2^32) different numbers. But we have to represent both positive and negative numbers by the same set of 2^32, so we have to divide this set equally between positive and negative numbers, which is (2^31). So there can be (2^31) negative numbers and (2^31) positive numbers. But, as we also have to represent zero, one piece of information from the positive half is reserved for that. So the range for storing integer data type is (-2^31) to (2^31)-1.
 
 Since the int data type can only store numbers in a particular range, what will you do if you wish to store a larger number? Or if you want to store a really small number, would you want the computer to allocate a large chunk of memory which int occupies? Clearly, for storing larger numbers and optimal memory usage, we need different “containers” with different sizes or you can say that we need different data types.
 
@@ -344,7 +344,7 @@ The syntax for declaring and initializing boolean data type is shown below-
     boolean isRaining = false;
 
 The last of the data types is a **byte**. This is a data type of the smallest size.
-a byte can store only an 8-bit integer ranging from -2^7 till 2^7-1.
+a byte can store only an 8-bit integer ranging from (-2^7) till (2^7)-1.
 
 The syntax for declaring and initializing byte data type is shown below.
 
