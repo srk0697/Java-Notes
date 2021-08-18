@@ -1,3 +1,210 @@
+# Arithmetic Operators - I
+In Java, +, -, and * are the symbols used for addition, subtraction, and multiplication respectively. 
+For division, the “/” symbol is used.
+
+**The syntax for addition, subtraction, multiplication and division are shown below.**
+
+    int x = 7;
+    int y = 4;
+    int a = x + y; //a = 11
+    int s = x - y; //s = 3
+    int m = x * y; //m = 28
+    int d = x / y; //d = 1
+    double dd = x / y; //dd = 1.0
+
+'//' symbol is used to write comments in java. Anything after '//' in a line is ignored by the compiler.
+Also, in the case of multiple calculations, the general **BODMAS rule** is followed. Remember, to prioritise something, you use parentheses.
+
+***A few important takeaways:***
+i) Dividing two integers will always give back an integer. So dividing 5 by 4 will give you 1 and not 1.25. The portion after the decimal is ignored.
+
+ii) Similarly, dividing two doubles always gives back a double. So dividing 4 stored in a double variable by 2 stored in a double variable will give back a double, 2.0 and not an int, 2.
+___
+# Arithmetic Operations - II
+The mod operator is used to store the remainder of the division between two numbers. It is very useful in cases such as trying to find an odd number or checking divisibility.
+
+### Example 1:-
+What will the output of the following code be? Write your answer in the box below.
+
+    int a = 5;
+
+    int b = 4;
+
+    int c = 3;
+
+    double z = (a + b - c) / a * b;
+
+    System.out.println(z);
+
+#### Answer-
+4
+***
+### Example 2:-
+Let’s say you have a 5-digit number, 23456. You are supposed to write a code that prints numbers in the ones, tens, hundreds, thousands, and ten thousands places of this number. In the text box below, write the steps you will follow to write the code. Share it on the discussion forum. Here, you only need to write the approach in a step-by-step manner, just like you did with algorithm design in the case of computational thinking.
+#### Answer-
+    public class arithematic {
+    public static void main(String[] args)
+    {
+       int number = 23456;
+
+       //for ten thousands place divide the number by 10000
+        int tenThousandsPlace = number/10000;
+        System.out.println(tenThousandsPlace);
+
+        //for thousands place divide the number by 1000
+        int x = number/1000;
+        int thousandsPlace = x-(tenThousandsPlace*10);
+        System.out.println(thousandsPlace);
+
+        //for hundreds place divide the number by 100
+        int y = number/100;
+        int hundredsPlace = y - ((tenThousandsPlace*100) + (thousandsPlace*10));
+        System.out.println(hundredsPlace);
+
+        //for tens place divide the number by 10
+        int z = number/10;
+        int tensPlace = z- ((tenThousandsPlace*1000) + (thousandsPlace*100) +       (hundredsPlace*10));
+        System.out.println(tensPlace);
+
+        //for units place
+        int unitsPlace = number- ((tenThousandsPlace*10000) + (thousandsPlace*1000) + (hundredsPlace*100) +(tensPlace*10));
+        System.out.println(unitsPlace);
+     }
+    }
+___
+# User Input
+Explanation of the Scanner Code
+
+**First, you wrote the following statement to be able to use the Scanner class:**
+
+    Scanner input= new Scanner(System.in);
+
+
+**Here, “input” is the name of your Scanner. You can name the Scanner absolutely anything(like choosing variable names).**
+
+This statement “new Scanner(System.in)” prompts Java to provide you with a new Scanner to “scan” the input given by users.
+
+You can then use the following statement to read some integer data given as input from the user:
+
+    a=input.nextInt();
+
+Here, the “.nextInt()” keywords tell you scanner(named “input”) to look for the next data entered by the user and store it in the variable “a”.
+
+Remember, for Java to know where should it get the code for the Scanner from, you have to add the following statement at the top of your code file:
+
+    import java.util.Scanner;
+
+### Example 1:-
+Write Java code below which  —
+
+   i) Asks the user to input three integer variables: a, b, and c
+
+   ii) Does the following calculation: a*b+c
+
+   iii) Prints out the value obtained in step 2
+
+***Input***
+
+a = 2, b = 3, c = 4 
+
+***Output***
+
+10
+
+#### Answer-
+
+    import java.util.Scanner;
+    public class Source {
+    public static void main( String[] args) {
+   
+    int a;
+    int b;
+    int c;
+
+    Scanner input = new Scanner(System.in);
+    
+    a= input.nextInt();
+    b= input.nextInt();
+    c= input.nextInt();
+    System.out.println(a*b+c);
+    }
+    }
+___
+# Casting
+If you want to store a double value to an int data type, you can do it by casting, which otherwise throws an error.
+
+    double d = 2.2;
+    int i = (int) d;
+ 
+Please note that here d is treated as int data type just for this assignment operation. The variable d remains of the type double only; i.e. if you use d somewhere else, it will behave as a double. Hence this is just a temporary conversion to an int.
+
+### Example 1:-
+The following variables have been initialized for you:
+   int a;
+   float f;
+   double d;
+You have to cast the variable into different data types as follows:
+   i) Cast a as float to a variable x.
+   ii) Cast f as an integer to a variable y.
+   iii) Cast d as float to a variable z.
+Hint: You have to initialize the variables x,y and z of proper data types.
+
+Note: The required code to take user input is already written for you. Similar to nextInt(), nextFloat() is used to take floating point data as input and nextDouble() takes a double value as input.
+
+***Sample Input:*** 
+11
+12.2345
+12.34567895343534611
+***Sample Output:***
+x=11.0 y=12 z=12.345679
+
+#### Answer-
+
+    import java.util.*;
+    public class Source {
+    public static void main(String[] args) {
+
+       Scanner input= new Scanner(System.in);
+       int a=input.nextInt();
+       float f=input.nextFloat();
+       double d=input.nextDouble();
+       float x;
+       int y;
+       float z;
+       x=(float)a;
+       y=(int)f;
+       z=(float)d;
+       System.out.println("x="+x+" y="+y+" z="+z);
+
+     }
+    }
+***
+### Example 2:-
+Write a Java program to take the temperature from the user in Celsius, convert it into fahrenheit and display it to the user. You can use the following formula for this purpose:
+F=9C/5+32
+Where, C is the temperature in celsius and F is the temperature in fahrenheit.
+
+**Note: C will be entered in integer form but F can be a float.
+
+***Sample Input:*** 1
+***Sample Output:*** 33.8
+
+#### Answer-
+
+    import java.util.*;
+    public class Source {
+
+    public static void main(String[] args) {
+
+      int C;
+      float F;
+      Scanner input= new Scanner(System.in);
+      C=input.nextInt();
+      F=9*(float)C/5+32;
+      System.out.println(F);
+     }
+    }
+___
 # String And Charecters
 “char” data type is used to store single characters like ‘a’, ‘$’ or ‘1’.
  
