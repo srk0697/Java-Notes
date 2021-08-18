@@ -294,11 +294,91 @@ iii) How to print the value stored inside a variable -
 
   iii) Line break before the closing brace.
 
-  iv) Line break after the closing brace, only if that brace terminates a statement or terminates the body of a method, constructor, or named class. For example, there is no line break after the brace if it is followed by else or a comma.
+  iv) Line break after the closing brace, only if that brace terminates a statement or terminates the body of a method, constructor, or named class. For example, there is no line       break after the brace if it is followed by else or a comma.
 
-  v) Each time a new block or block-like construct is opened, the indent increases by two spaces. When the block ends, the indent returns to the previous indent level. The indent level applies to both the code and comments throughout the block.
+  v) Each time a new block or block-like construct is opened, the indent increases by two spaces. When the block ends, the indent returns to the previous indent level. The indent      level applies to both the code and comments throughout the block.
 
 ![Screenshot 2021-08-18 122834](https://user-images.githubusercontent.com/88551711/129852727-36b7f393-40cb-4634-85c5-aaee5fd5f38e.png)
 ___
 # Introduction to Data Types - I
+A bit can only contain 0 or 1. We can say a bit can represent 2^1 pieces of information.
 
+If we take two bits, we can have four combinations, such as 00, 01, 10, 11. So two bits can represent 2^2  pieces of information. Similarly, n bits can store 2^n pieces of information. As int in java is 32 bits long, it can represent 2^32 different numbers. But we have to represent both positive and negative numbers by the same set of 2^32, so we have to divide this set equally between positive and negative numbers, which is 2^31. So there can be 2^31 negative numbers and 2^31 positive numbers. But, as we also have to represent zero, one piece of information from the positive half is reserved for that. So the range for storing integer data type is -2^31 to 2^31-1.
+
+Since the int data type can only store numbers in a particular range, what will you do if you wish to store a larger number? Or if you want to store a really small number, would you want the computer to allocate a large chunk of memory which int occupies? Clearly, for storing larger numbers and optimal memory usage, we need different “containers” with different sizes or you can say that we need different data types.
+
+Two more data types, long and short.
+
+The syntax which explains how to declare and initialize these two data-types.
+
+    short s = 10;
+    long l1 = 9999999999l;
+    long l2 = 9999999999L;
+
+**Note:- You have to end the value of a long variable with 'l' or 'L', otherwise the compiler considers it as int and will throw an error when you try to store a value which is out of range for int but within range of long. Also, it is recommended to use upper case letter 'L' as lower case letter 'l' is hard to distinguish from digit '1'.**
+
+![Screenshot 2021-08-18 191718](https://user-images.githubusercontent.com/88551711/129909703-02318077-1cc5-4102-88bc-5dc356123564.png)
+
+**Note:- Note that “long” and “Long” are two different data types in Java.**
+
+![Screenshot 2021-08-18 191922](https://user-images.githubusercontent.com/88551711/129909979-50221791-c50d-43db-8f7a-d484677a6626.png)
+
+**Note:- float and double can also store whole numbers or integers.**
+
+int, long, short, float, double are called Primitive Datatypes in Java because these are the main built-in types and can be used to build other data types in Java.
+___
+# Introduction to Data Types - II
+A new data type **char**.
+
+The syntax for declaring and initializing it-
+
+    char c1 = 'a';
+    char c2 = '1';
+    char c3 = '$';
+
+Let us now move on to a data type called **boolean**. A **boolean** can store only one bit of data. It can take a condition as an input and will return ‘true’ or ‘false’, depending on whether the condition is true or false.
+
+The syntax for declaring and initializing boolean data type is shown below-
+
+    boolean isMorning = true;
+    boolean isRaining = false;
+
+The last of the data types is a **byte**. This is a data type of the smallest size.
+a byte can store only an 8-bit integer ranging from -2^7 till 2^7-1.
+
+The syntax for declaring and initializing byte data type is shown below.
+
+    byte b = 10;
+
+### Example 1:-
+
+Consider that you want to store distance between two points in variables.
+The distance given is 2.367 kms.
+Initialize a variable named “distance” to store the distance in kilometres.
+Initialize a variable named “distanceInMetres” to store the distance in metres.
+
+**Note:** Remember to use appropriate data types to store the distances.
+The code stub given will print the values accordingly, you only have to initialize the variables.
+
+**Sample test case:**
+
+***Input:*** Nil
+
+***Output:*** 
+
+Distance in km=2.367
+
+Distance in metres=2367
+
+#### Answer-
+
+    import java.util.*;
+    public class Source {
+    public static void main(String[] args) {
+       
+        float distance = 2.367f;
+        int distanceInMetres = 2367;
+        System.out.println("Distance in km="+distance);
+        System.out.println("Distance in metres="+distanceInMetres);
+      }
+    }
