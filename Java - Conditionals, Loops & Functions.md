@@ -852,3 +852,115 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z
 	       }
 	   }
 	}
+___
+# The For Loop
+Let us now look at another kind of loop, the for loop.
+
+**The syntax for for loop-**
+
+	for (initialization condition; termination condition; increment condition) {
+	    Action;
+	}
+
+**The syntax for for loop using counter-**
+
+	for (int counter = initialValue; counter < endValue; counter += increment) {
+		Action;
+	}
+
+One thing you have to keep in mind that, in for loop, we can omit any of the 3 conditions. For example, we can write for loop as shown below-
+
+	int counter = initialValue;
+	for ( ; counter < endValue; ) {
+		Action;
+		counterValue += increment;
+	}
+
+In the above example, we omitted both initialization and increment condition in for loop, but it is still valid. You can also write for loop as shown below-
+
+	for ( ; ; ) {
+	    Action;
+	}
+***
+### Example 1:-
+Write a code that prints the numbers between 2,000 and 3,000, which are divisible by 8 but not by 6. (Hint: apply Boolean condition - number%8==0 && number%6!=0)
+				   
+**Note:**
+				   
+Please print all the even numbers on the same line, such as:
+				   
+2000 2008 2024  ...
+				   
+and not on different lines, such as:
+				   
+2000
+2008
+2024
+...
+
+***Input:***
+				   
+No input required
+				   
+***Output:***
+				   
+2000 2008 2024 2032 2048 2056 2072 2080 2096 2104 2120 2128 2144 2152 2168 2176 2192 2200 2216 2224 2240 2248 2264 2272 2288 2296 2312 2320 2336 2344 2360 2368 2384 2392 2408 2416 2432 2440 2456 2464 2480 2488 2504 2512 2528 2536 2552 2560 2576 2584 2600 2608 2624 2632 2648 2656 2672 2680 2696 2704 2720 2728 2744 2752 2768 2776 2792 2800 2816 2824 2840 2848 2864 2872 2888 2896 2912 2920 2936 2944 2960 2968 2984 2992
+
+#### Answer-
+
+	class Source {
+	  public static void main(String[] args) {
+	    int i;
+	    for (i = 2000; i < 3000; i++) {
+	      if (i % 8 == 0 && i % 6 != 0) {
+		System.out.print(i + " ");
+	      }
+	    }
+	  }
+	}
+***
+### Example 2:-
+Write a program that prints the sum of first n numbers, where n is the input from the user. For e.g., if the user input is 10, the output of the program should be 55.
+***Input: 
+
+10
+
+***Output:***
+
+55
+
+#### Answer-
+
+	import java.util.Scanner;
+	class Source {
+	  public static void main(String arg[]) {
+	    int sum = 0;
+	    Scanner scan = new Scanner(System.in);
+	    //Enter the number upto which you wish to find the sum, in the input console
+	    int number = scan.nextInt();
+	    for (int i = 1; i <= number; i++) {
+	      sum = sum + i;
+	    }
+	    System.out.print(sum);
+	  }
+	}
+***
+### Example 3:-
+Print first n integers starting from 0 in the reverse order using the for loop.
+(n is an integer entered by the user)
+				       
+***Sample Input:***
+				       
+5
+				       
+***Sample Output***
+				       
+5
+4
+3
+2
+1
+0
+
+#### Answer-
+
