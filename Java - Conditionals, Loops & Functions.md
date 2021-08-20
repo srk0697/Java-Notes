@@ -1014,3 +1014,57 @@ Average of n numbers= Sum of numbers/n
 	}
 ***
 # Do-While loop
+The syntax for do-while loop-
+
+	do {
+		Action;
+	} while (condition);
+
+The basic logic for these loops remains the same, the only difference being that the loop continuation condition is evaluated before the first iteration in case of “while” loop and after the first iteration in case of “do while”.
+
+One use of the do-while loop can be asking the user to enter the password, and if the user enters a wrong password, we keep on asking it till he enters a right password. Here we have to ask the user for a password atleast once no matter what. We can implement this as shown below-
+
+	int correctPIN = 123456;
+	int userPIN;
+	do {
+		System.out.print ("Enter PIN : ");
+		userPIN = scan.nextInt();
+	} while (userPIN != correctPIN);
+	System.out.println("Welcome");
+
+### Example :-
+Print first n integers starting from 0 in the reverse order using the do-while loop.
+(n is an integer entered by the user)
+
+***Sample Input:***
+
+5
+
+***Sample Output***
+
+5
+4
+3
+2
+1
+0
+
+#### Answer-
+
+	import java.util.*;
+	public class Source {
+
+	   public static void main(String[] args) {
+	     int n;
+	     Scanner input= new Scanner(System.in);
+	     n=input.nextInt();
+	     int counter=n;
+	     do{
+		 System.out.println(counter);
+		 counter=counter-1;
+	     }while (counter>=0);
+	   }
+	}
+***
+# Arrays: Initialization via Loops
+
