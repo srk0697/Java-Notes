@@ -799,6 +799,7 @@ The first line of input will contain x and the second line will have n.
 2
 
 4
+
 ***Sample Output:***
 2
 
@@ -1067,4 +1068,122 @@ Print first n integers starting from 0 in the reverse order using the do-while l
 	}
 ***
 # Arrays: Initialization via Loops
+An array would be created by values input by the user. The size of the array would also be dependent on the user.  It is possible to create an array using loops.
+
+## Break Statement-
+If you want to exit or terminate a loop before it's end condition is met, you can do that using break statement. We use break statement to terminate a loop when we have achieved our objective or when we realise that running loop any more will not be beneficial at all. For example, when we are searching for an element in an array, we have to look into the entire array as that element can be anywhere. But if we find that element, then there is no need to continue loop further.
+
+	while (condition) {
+		Action;
+
+		if (objectiveAchieved) {
+			break;
+		}
+	}
+___
+# Continue Statement
+You learnt how to use a break statement to exit a loop. Just as in the case of a break, you don’t need to go through all the iterations when the objective is met, you may also want to skip some iterations if a condition is not met. 
+
+The syntax for continue statement-
+
+	while (condition) {
+		if (NoNeedToPerformThisIteration) {
+			continue;
+		}
+
+		Action;
+	}
+___
+# Functions Basic
+A piece of code to be re-used multiple times in a program can be written as something called a "function" and can be then reused multiple times. Consider you have a browser window open, whenever you want to open a new tab you would just click on a button without worrying how a new tab opens. Functions in Java provide you with a similar facility to do tasks without worrying about their implementation. You can also write your own functions in Java.
+
+The length() and charAt() functions in Java which tell you the length of the string and give you a character at a particular index respectively. Let us take a look at another interesting function in Java.
+
+Java provides you with multiple such functions which make your life easier. Also, you can write your own functions. In the next session, you will learn more about functions and how they help you in writing better computer programs.
+
+### Example :-
+Can you think of more cases where a function could be built to help you with string manipulation?
+
+For example: Checking if two strings are equal, finding a letter in a string.
+
+#### Answer-
+There are multiple functions related to strings in Java. For example, the toUppercase() function converts all letters of a string into uppercase.
+___
+### Example 1:-
+Write a code that prints the highest power of 2, less than or equal to a given number. For e.g., if the input number is 9, the code should print 8, as 8 or  23 is the highest power of two which is less than 9. 
+
+***Sample Input:***
+
+9
+
+***Output:***
+
+8
+
+#### Answer-
+
+	import java.util.Scanner;
+	class Source {
+	    public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		// Enter the number
+		int number = scan.nextInt();
+		int result = 1;
+		if(number >= 2) {
+
+		    while (result * 2 <= number) {
+			result = result * 2;
+		    }
+
+		    System.out.print(result);
+
+		} else {
+		    System.out.print("Please enter an integer >= 2");
+		}
+
+		scan.close();
+	    }
+	  }
+***
+### Example 2:-
+Write the programming logic in order to find the minimum element of the provided array.
+(array is given in the stub)
+
+#### Answer:-
+
+	import java.util.Scanner;
+	class Source {
+	   public static void main(String[] args) {
+	       int num, min;
+	       int[] array = {156, 171, 260, 95, 244, 296, 137, 180, 198, 61, 70, 283, 276, 55,
+	       + 100, 59, 278, 191, 109, 110, 158, 206, 77, 279, 53, 117, 217, 214, 107, 99, 222, 
+	       + 275, 179, 213, 199, 139, 174, 286, 176, 155, 237, 256, 251, 187, 249, 215, 211, 113, 
+	       + 144, 50, 148, 49, 170, 236, 219, 106, 71, 263, 145, 231, 190, 165, 239, 41, 177, 297,
+	       + 184, 193, 287, 202, 161, 189, 79, 232, 154, 153, 208, 72, 143, 300, 233, 124, 75,
+	       + 277, 63, 130, 86, 242, 203, 116, 196, 289, 146, 273, 268, 56, 104, 173, 134, 194};
+	       min = array[0];
+
+	       for (int index = 0; index < array.length; index++) {
+		   if (min > array[index]) {
+		       min = array[index];
+		   }
+	       }
+
+	       System.out.println("Minimum value: " + min);
+	   }
+	}
+___
+# Understanding Functions
+It means to operate in a particular way. For example, the function of a pencil is to write. This function is specific and clearly defined.
+A function basically has a defined name and needs to be called when an action is required. When called, a function should carry out the specific task it is created for. 
+
+Defining a function is important as it determines what the function will be able to do. When you use ‘void’ in the function definition, you cannot use the function to return a value.
+
+![Screenshot 2021-08-22 034829](https://user-images.githubusercontent.com/88551711/130336193-30f2b438-990a-4a41-ac90-ab4f45f5bb8d.png)
+
+When you wish to return a value, you define its data type in the function definition.
+
+![Screenshot 2021-08-22 035009](https://user-images.githubusercontent.com/88551711/130336209-9b8de7f4-1e83-4010-8b8e-7d36a6579c4c.png)
+___
+# Passing Parameters
 
