@@ -1186,4 +1186,428 @@ When you wish to return a value, you define its data type in the function defini
 ![Screenshot 2021-08-22 035009](https://user-images.githubusercontent.com/88551711/130336209-9b8de7f4-1e83-4010-8b8e-7d36a6579c4c.png)
 ___
 # Passing Parameters
+You learnt how to define functions in the last lecture. The functions you saw had a limited usage because they were not interacting with the code. They were performing an action based on predefined values. What if you want functions to be more flexible? For instance, what if you want them to perform actions based on the values input by the user. 
 
+You just created a function that took a name input from the user and printed a greeting using the name. You can define even more parameters as required.
+
+You must clearly define what parameters the function can take. If you define two int parameters, you can pass only two int values into it. This means that you can only pass the values that are of the same data type as the parameters defined in the function.
+
+You should also note that the values passed into the function, while calling it, are called arguments. Thus, instead of saying you are passing values/variables into the function, you can say you are passing arguments into the function.
+***
+### Example 1:-
+What does the function - print() do in the following code?
+
+	public class MyClass {
+	    public static void print(String var1, int var2) {
+		for (int i = 0; i < var2; i++) {
+		    System.out.println(var1 + " " + i);
+		}
+	    }
+
+	    public static void main(String[] args) {
+		String var1 = "Hello";
+		int var2 = 4;
+		print(var1, var2);
+	    }
+	}
+
+#### Answer-
+
+The parameters are String var1 and int var2. Due to the for loop, string var1 is printed till ‘i’ or the loop control variable, takes on the value - var2. Therefore, if var1 is ‘Hello’, and var2 is 4, the output of the function will be — “Hello 0” “Hello 1” “Hello 2” “Hello 3”
+***
+### Example 2:-
+Write a program that takes two numbers as input and returns the square of their sum.
+
+For e.g., if the input numbers - 4 and 9 are passsed as parameters into the function, it should return  169, which is  (4+9)2
+
+***Sample Input:***
+
+4
+
+9
+
+***Output:***
+
+169
+
+#### Answer-
+
+	import java.util.Scanner;
+	class Source {
+
+	    public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int number1 = scan.nextInt();
+		int number2 = scan.nextInt();
+		System.out.print(squareOfSum(number1, number2));
+	    }
+
+
+	    public static int squareOfSum(int x, int y){
+		return (x + y) * (x + y);
+	    }
+	}
+___
+# Functions Practice
+Can you use a function that can use the logic, take a number as a parameter, and return whether the number passed is a prime number or not? This way, to check if a number is a prime number, you will simply have to pass it through the function instead of writing the entire logic for it.
+
+One of the major advantages of using functions is that if something goes wrong, you know where to make corrections that will be reflected in the entire program. Take two scenarios: one where you are checking prime numbers using the entire elaborate logic, let’s say, 10 times in different places, and you realise that you have made an error. Here, you will have to make corrections in each of these 10 places. However, if in the second scenario, you use a function, which essentially reduces the effort required, you can simply make the correction in the function body. It will be reflected in the results.
+
+### Example 1:-
+Write a function that takes two numbers as parameters and returns the LCM of these two numbers. So, if the values passed into the function are 12 and 20, the function will return the lowest common multiple of these two, i.e 60.
+
+***Sample Input:***
+
+12
+
+20
+
+***Output:***
+
+60
+
+#### Answer-
+
+	import java.util.Scanner;
+	class Source {
+
+		public static void main(String[] args) {
+			Scanner scan = new Scanner(System.in);
+			// Enter the two numbers in the input console
+			int number1 = scan.nextInt();
+			int number2 = scan.nextInt();
+		System.out.println(lcm(number1, number2));
+		}
+		public static int lcm(int number1, int number2) {
+		int multiple;
+			// maximum number between number1 and number2 is stored in multiple
+			if (number1 > number2) {
+				multiple = number1;
+			} else {
+				multiple = number2;
+			}
+		Boolean loopcontinue = true;
+			// Always true
+			while (loopcontinue == true) {
+				if (multiple % number1 == 0 && multiple % number2 == 0) {
+					break;
+				}
+				multiple++;
+			}
+	  return multiple;
+	  }
+	}
+___
+# Pass by Value
+Java uses ‘pass by value’, i.e. the values are copied into the parameters of the function, and the function performs its action based on these copied values, leaving the main variables untouched.
+
+Now you may be wondering how to use functions to modify the variables. You can achieve the desired results by returning the modified values using a function, storing them in a temporary variable and then reassigning them to the concerned variables.
+
+There is another mechanism called ‘pass by reference’ in some programming languages, using which, variables can be modified using functions. Although Java doesn’t support pass by reference, you will learn to achieve the desired results in further modules.
+
+### Example 1:-
+Consider a scenario where your friend wants you to create a function that takes a string as input and then replaces the string with the upper case version.
+
+	public class StringUpperCase {
+	    public static void main(String[] args) {
+		String string1 = "Welcome";
+		uppercase(string1);
+		System.out.println(string1);
+	    }
+
+	    public static String uppercase(String string1) {
+		string1.toUpperCase();
+		return string1;
+	    }
+	}
+
+What will be the output of the code above?
+
+#### Answer-
+
+**Welcome**
+
+Function toUpperCase() creates a new String based on the variable value it was called upon, it doesn't change the variable itself. For example -
+
+	String str = "hello";
+	String up = str.toUpperCase();
+
+	System.out.println (str);
+	System.out.println (up);
+
+The output of the above code will be -
+
+	hello
+	HELLO
+
+As we are neither storing String returned by toUpperCase() function nor we are returning it, the changes will not get reflected.
+___
+# Inbuilt Functions
+
+### Question 1:-
+List down all the inbuilt functions you have used till now.
+
+#### Answer-
+System.out.println()
+System.out.print()
+scanner.nextInt()
+scanner.nextFloat()
+scanner.next()
+scanner.nextLine()
+string.length()
+string.toUpperCase()
+.
+.
+.
+***
+### Question 2:-
+**MATH Library**
+
+For the following question, please look through Javadoc's documentation for the Math class.
+
+https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html
+
+Which Math method will return the value of ‘a’ raised to the power ‘b’?
+
+#### Answer-
+
+Math.pow(a, b)
+
+Function pow(a,b) returns a^b.
+***
+### Example 1:-
+You are given an array of decimal numbers. You are required to round these into integers. Read the documentation below, and use the function that fits best to write the code.
+
+https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html
+
+***Input:***
+
+No input required
+
+***Output:***
+
+10.0 20.0 31.0 41.0 50.0 60.0 72.0
+
+#### Answer-
+
+	class Source {
+	   public static void main(String[] args) { 
+	       double[] array = {10.32,20.36,30.50,40.51,50.49,60.43,71.71};
+
+	       for(int i = 0; i <  array.length; i++) {
+		   array[i]= Math.round(array[i]);
+	       }
+
+
+	       for(int i = 0; i <  array.length; i++) {
+		   System.out.print(array[i] + " ");
+	       }
+
+	   }
+	}
+***
+### Example 2:-
+There is an internal library called Arrays, which can perform multiple operations on arrays.
+
+https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html
+
+Find the function that can sort an array, and use it to sort the array given in the question. 
+
+(**Hint**: Use the internal library sort() to sort a given array. For e.g., ***sort(long[] a)*** sorts the specified array in ascending numerical order.) 
+
+***Input:***
+
+No Input Required
+
+***Output:***
+
+2 12 19 29 34 43 45 56
+
+#### Answer-
+
+	import java.util.Arrays;
+	class Source {
+	  public static void main(String[] args) {
+	    int[] array = {29,34,12,45,56,02,43, 19};
+	    Arrays.sort(array);
+	    for(int i=0; i<array.length; i++) {
+	      System.out.print(array[i] + " ");
+	    }
+	  }
+	}
+___
+# Reading from a File
+Till now, you created programs that take inputs from users. But what if you want to read a text or numbers from a file on your computer? You can use some internal libraries in Java to read from files. 
+
+***We can read a file line-by-line as shown below-***
+
+![Screenshot 2021-08-22 183829](https://user-images.githubusercontent.com/88551711/130356455-36b59a21-c158-4e10-96f8-3490b6e13fad.png)
+
+***We can read a file word-by-word as shown below-***
+
+![Screenshot 2021-08-22 184040](https://user-images.githubusercontent.com/88551711/130356507-3885bdfe-2827-4832-b45d-72d5e7acfd62.png)
+___
+# Exceptions
+While writing your programs, you would have encountered many errors. It is indeed very irritating to encounter such errors. If a user is using your program and encounters such errors, he/she may lose trust in it. 
+
+Let’s say you were loading a website page. The page didn’t load, but you got a simple message saying “Page not found”. Although there was an error, the website program was able to identify the error, mask the original error message, and send out a simple readable message — “Page not found”. But what if you got the entire technical message? You would lose trust in the creators of the website. Thus, you have to handle errors in a program.
+
+**Note:** In JAVA, when you try to divide a variable of ***int*** data type by 0, Java throws an ***Arithmetic Exception***. However, when you try to divide a variable of ***float or double*** data type by 0, it returns ***Infinity*** instead of an exception.
+
+![Screenshot 2021-08-22 192532](https://user-images.githubusercontent.com/88551711/130357788-ece08cf7-6a77-44d6-9017-02047582db20.png)
+
+**Above code when run throws "ArithmeticException".**
+
+![Screenshot 2021-08-22 192653](https://user-images.githubusercontent.com/88551711/130357828-0a504689-cfc6-4d33-84c0-3e8b6abd9038.png)
+
+**Above code when run gives "Infinity" as output.**
+
+You learnt how you can handle exceptions using the try and catch blocks. Here’s how a Try and Catch block looks:
+
+![Screenshot 2021-08-22 192815](https://user-images.githubusercontent.com/88551711/130357869-5b616bfa-7607-4a04-b788-a9ca4eb50e1d.png)
+
+The try block contains the code where exceptions may arise. If an exception occurs, it is caught by the catch block, and the statement inside the block is executed. 
+
+A **compile-time error** is any type of error that prevents a java program from compiling, e.g. syntax error, incorrect data-types etc. Checked exceptions cause compile-time errors if left unhandled.
+
+A **runtime error**, on the other hand, arises while the program is running. This could happen due to unexpected user input or an incorrect logic etc.
+
+So, now you know why you used **“throws FileNotFoundException”** when you were writing the code to read text from an external file. The **throws** keyword specifies that an exception may arise in a particular method. It is different from try and catch in that it has no provision to handle the exception and thus, it can’t catch the error and execute the corresponding action, e.g. displaying a different simplified message to the user.
+
+You learnt about the various kinds of exceptions that may arise in your codes. You learnt about checked and unchecked exceptions. Checked exceptions are those that are checked while a program is being compiled. A program will not compile if there is no provision to handle these exceptions in your code. On the other hand, for unchecked exceptions, the program may compile even if there is no provision to handle them.
+***
+### Example :-
+The following code throws a compilation error when executed. How would you handle the error? 
+
+Change the code so that it is compiled without an error. (**Hint:** A statement in the code throws a checked exception.)
+
+***Sample Input:***
+
+Hello
+
+***Output:***
+
+You wrote: Hello
+
+#### Answer-
+
+	import java.io.BufferedReader;
+	import java.io.IOException;
+	import java.io.InputStreamReader;
+
+	class Source {
+	   public static void main(String[] args) {
+	       System.out.print("Write :");
+	       BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+
+	       try {
+		   String inData;
+		   inData = stdin.readLine();
+
+		   System.out.print("You wrote :" + inData);
+	       } catch (Exception e) {
+		 System.out.print(e);
+	       }
+	   }
+	}
+___
+# Writing to a File
+You already learnt how to read from a file. You will now learn how to write the output of your code to a file.
+
+![Screenshot 2021-08-22 194914](https://user-images.githubusercontent.com/88551711/130358477-3c4cc9a0-5eda-4bde-b32d-60db0c8b7bda.png)
+
+**We can write to a file as shown above-**
+
+This will make sure that you have your results in a saved format for comparison or in situations when you need to present the output of your code to your clients.
+___
+### Question 1:-
+
+**Functions**
+
+What are the return type and the expected parameter for the following function?
+
+	public static String getLoginUrl(String redirectPage) {
+		User user = userService.getCurrentUser();
+
+		if (user == null) {
+		    return userService.createLoginURL(redirectPage);
+		}
+		return redirectPage;
+	    }
+
+#### Answer-
+
+**Return type: String & Expected parameter: String redirectPage**
+
+The return type of the function is String as is defined in “public String … “. It takes the parameter ‘String redirectPage’.
+***
+### Question 2:-
+
+**Identify the Bug**
+
+You are given a program that contains the printBackwards function, which is supposed to print out an array of integers backwards.
+
+To be specific, if there is an int array of [1,2,3,4,5], the printBackwards function should print out: 5 4 3 2 1.
+
+However, there is a bug in the code, and the function is not working as expected. 
+
+	public void printBackwards(int[] numbers) {
+	    for(int i=numbers.length-1; i > 0; i--) {
+		System.out.println(numbers[i]);
+	    }
+	}
+
+#### Answer-
+
+The for loop stops running when i is equal to 1. Therefore, you will never print the 0th index element of the numbers array. For it to work as expected, it should be written as shown below -
+
+	public void printBackwards(int[] numbers) {
+	    for(int i=numbers.length-1; i >= 0; i--) {
+		System.out.println(numbers[i]);
+	    }
+	}
+***
+# Question 3:-
+Imagine you are building a Facebook clone.
+Write a function called ‘mostVotes’ that —
+ 1) takes in an int array called votesPerUser as a parameter, where each element in the array represents the number of votes received by the user, with the userId at that index.
+
+ 2) returns the index of the user with the most votes.
+
+ 3) if there are ties between users with the most votes, returns the index of the first user with the most votes. For example, if the 0th and 7th users in the array both have 20     votes, and both have the most number of votes, they return 0. 
+
+For example, if the array is - 2 4 3 5 6 3
+
+Output would be - User with the most votes is User: 4
+
+An array has already been initialized in the code below. So, you don't have to give any input.
+
+***Input:***
+
+No input required
+
+***Output:***
+
+User with the most votes is User: 2
+
+#### Answer:-
+
+	class Source {
+	  public static void main(String args[]) {
+	    int[] votes = {1,2,34,5,6,7,8,9,10,11,12,13,14,15};
+	    int userWithMostVotes = mostVotes(votes); 
+	    System.out.println("User with the most votes is User: " + userWithMostVotes);  
+	  }
+
+	  public static int mostVotes(int[] votesPerUser) {
+	    int userWithMostVotes = 0; 
+
+	    for(int i=0; i < votesPerUser.length; i++) {
+	      if(votesPerUser[i] > votesPerUser[userWithMostVotes]) {
+		userWithMostVotes = i;
+	      }
+	    }
+	    return userWithMostVotes;
+	  }
+	}
+___
