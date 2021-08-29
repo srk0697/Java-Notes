@@ -35,4 +35,9 @@ ___
 
 ![Screenshot 2021-08-29 012515](https://user-images.githubusercontent.com/88551711/131231266-6a4f978c-2162-4133-9129-73f72933b00b.png)
 ![Screenshot 2021-08-29 012559](https://user-images.githubusercontent.com/88551711/131231268-0088c8e2-6323-4b70-ac7d-8f951b3757c4.png)
+
+## Precedence Of Operators
+Precedence of operators come into picture when an expression we need to decide which operator will be evaluate first. ***Operator with high precedence will be evaluated first***.
+## Associativity Of Operators
+Associativity of operators come into picture when ***precedence of operators are same*** and we need to decide which operator will be evaluated first.
 ___
