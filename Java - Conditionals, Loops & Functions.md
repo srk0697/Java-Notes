@@ -1068,8 +1068,8 @@ Print first n integers starting from 0 in the reverse order using the do-while l
 	}
 ***
 # Arrays: Initialization via Loops
-An array would be created by values input by the user. The size of the array would also be dependent on the user.  It is possible to create an array using loops.
 An array is a collection of items stored at contiguous memory locations. It store multiple items of the same type together.
+An array would be created by values input by the user. The size of the array would also be dependent on the user.  It is possible to create an array using loops.
 
 ## Break Statement-
 If you want to exit or terminate a loop before it's end condition is met, you can do that using break statement. We use break statement to terminate a loop when we have achieved our objective or when we realise that running loop any more will not be beneficial at all. For example, when we are searching for an element in an array, we have to look into the entire array as that element can be anywhere. But if we find that element, then there is no need to continue loop further.
