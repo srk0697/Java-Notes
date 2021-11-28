@@ -129,7 +129,7 @@ Write a Java program to print a student’s grade based on his marks. You will t
 
 >40 & <=60 | D
 
-<=40 | E
+ <=40 | E
 
 ***Input format:*** 
 The first line will contain the name of the student and the second line will contain student's marks.
