@@ -119,11 +119,16 @@ The numbers entered are in increasing order
 Write a Java program to print a student’s grade based on his marks. You will take the student’s name and marks as input and determine the grade based on the following:
 
 
-***Marks | Grade
+***Marks | Grade***
+
 >100 | A
+
 >80 & <=100 | B
+
 >60 & <=80 | C
+
 >40 & <=60 | D
+
 <=40 | E
 
 ***Input format:*** 
