@@ -265,7 +265,7 @@ Nested If Else basically means an If Else statement inside another If Else state
 
 **The syntax for nested if-else:**
 
-     if (condition1) {
+    if (condition1) {
 	if (condition1A) {
 		Action1A;
 	}
