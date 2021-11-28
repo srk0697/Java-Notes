@@ -143,7 +143,7 @@ The grade scored by Aishwarya is E
 Aishwarya
 49
 	
-Sample Output:
+***Sample Output:***
 The grade scored by Aishwarya is D
   
 #### Answer-
