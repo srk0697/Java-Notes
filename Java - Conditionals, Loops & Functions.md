@@ -110,7 +110,7 @@ The numbers entered are in increasing order
      }
     }
 ***
-#### Example 2:-
+### Example 2:-
 
 Write a Java program to print a student’s grade based on his marks. You will take the student’s name and marks as input and determine the grade based on the following:
 
