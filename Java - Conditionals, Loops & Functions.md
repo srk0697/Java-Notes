@@ -78,11 +78,15 @@ In situations where there might be several possible alternatives and only one of
 
 Write Java code to check whether numbers entered by the user are in increasing order or decreasing and print “The numbers entered are in increasing order” for increasing order and “The numbers entered are in decreasing order” for decreasing order.
 If the numbers are in neither increasing order then print “The number are in neither in increasing order nor in decreasing order”.
+
 ***Sample Input:***
+
 11
 19
 132
+
 ***Sample Output:***
+
 The numbers entered are in increasing order
 
 #### Answer-
@@ -131,12 +135,14 @@ The grade scored by <name> is <grade>.
 ***Sample Input:***
 Aishwarya
 33
+	
 ***Sample Output:***
 The grade scored by Aishwarya is E
 
 ***Sample Input:***
 Aishwarya
 49
+	
 Sample Output:
 The grade scored by Aishwarya is D
   
