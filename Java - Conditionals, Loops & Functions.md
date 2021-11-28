@@ -172,7 +172,7 @@ The grade scored by Aishwarya is D
      }
 
 ***
-### Example :-
+### Example 3:-
 
 **Lie Detector** 
 
